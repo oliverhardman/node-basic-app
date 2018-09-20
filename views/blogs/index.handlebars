@@ -1,0 +1,20 @@
+{{#each blogs}}
+  <div class="card">
+      <div class="card-content">
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
+          <br>
+          <p>
+            <a class="waves-effect waves-light btn-large" href="/blogs/{{id}}/edit">Edit</a>
+          </p>
+          <br>
+          <!-- fetch the id of the blog that needs to be delete -->
+          <form class="" action="/blogs/{{id}}?_method=DELETE" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+              <button class="waves-effect waves-light btn-large" type="submit" name="button">Delete</button>
+          </form>
+      </div>
+  </div>
+{{else}}
+  <h1>No blogs Posted</h1>
+{{/each}}
